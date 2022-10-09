@@ -1,0 +1,9 @@
+{
+  "filename": "ConsoleCheats.dll",
+  "author": "Smaed",
+  "name": "ConsoleCheats",
+  "uniqueName": "Smaed.ConsoleCheats",
+  "version": "0.1.0",
+  "owmlVersion": "2.7.0",
+  "dependencies": ["Smaed.DeveloperConsole", "PacificEngine.OW_CommonResources"]
+}

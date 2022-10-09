@@ -1,0 +1,201 @@
+# Console Cheats
+This mod is a [Developer Console](https://github.com/Smaedd/OW_DeveloperConsole) port of PacificEngine's [Cheats Mod](https://github.com/PacificEngine/OW_CheatsMod), intended both as a proof of concept for the developer console, and as a general cheats mod with improved ease of use.
+
+To run a cheat, open the console with the `~` key and submit the desired command.
+
+###  Console Variables:
+- `god`
+	- Type: `bool`
+	- Stores whether the player is invincible
+	- Usage: `god true`, `god false`
+- `infinite_fuel`
+	- Type: `bool`
+	- Stores whether the player has infinite fuel or not
+	- Usage: `infinite_fuel true`, `infinite_fuel false`
+- `infinite_oxygen
+	- Type: `bool`
+	- Stores whether the player has infinite oxygen or not
+	- Usage: `infinite_oxygen true`, ``infinite_oxygen false`
+- `infinite_health`
+	- Type: `bool`
+	- Stores whether the player has infinite health or not
+	- Usage: `infinite_health true`, `infinite_health false`
+- `infinite_boost`
+	- Type: `bool`
+	- Stores whether the player has infinite boost or not
+	- Usage: `infinite_boost true`, `infinite_boost false`
+- `anglerfish_ai`
+	- Type: `bool`
+	- Stores whether the anglerfish AI is enabled or not
+	- Usage: `anglerfish_ai true`, `anglerfish_ai false`
+- `inhabitants_ai`
+	- Type: `bool`
+	- Stores whether the 'inhabitants' (EOTE) AI is enabled or not 
+	- Usage: `inhabitants_ai true`, `inhabitants_ai false`
+- `inhabitants_hostile`
+	- Type: `bool`
+	- Stores whether the 'inhabitants' (EOTE) AI are hostile or not 
+	- Usage: `inhabitants_hostile true`, `inhabitants_hostile false`
+- `loop_time`
+	- Type: `float`
+	- Stores the remaining loop time (in seconds)
+	- Usage: e.g. `loop_time 1000`, `loop_time 60`
+- `player_thrust`
+	- Type: `float`
+	- Stores the player's thrust multiplier
+	- Usage: e.g. `player_thrust 10`, `player_thrust 100`
+- `ship_thrust`
+	- Type: `float`
+	- Stores the ship's thrust multiplier
+	- Usage: e.g. `ship_thrust 10`, `ship_thrust 100`
+- `fog`
+	- Type: `bool`
+	- Stores whether fog is being rendered or not
+	- Usage: `fog true`, `fog false`
+- `debug_playerpos`
+	- Type: `bool`
+	- Enables/disables player position debug rendering
+	- Usage: `debug_playerpos true`, `debug_playerpos false`
+- `debug_planetpos`
+	- Type: `bool`
+	- Enables/disables planet position debug rendering
+	- Usage: `debug_planetpos true`, `debug_planetpos false`
+- `debug_bramble`
+	- Type: `bool`
+	- Enables/disables dark bramble portal debug rendering
+	- Usage: `debug_bramble true`, `debug_bramble false`
+- `debug_warppad`
+	- Type: `bool`
+	- Enables/disables warp pad debug rendering
+	- Usage: `debug_warppad true`, `debug_warppad false`
+- `debug_facts`
+	- Type: `bool`
+	- Enables/disables fact debug rendering
+	- Usage: `debug_facts true`, `debug_facts false`
+- `debug_saveconditions`
+	- Type: `bool`
+	- Enables/disables save condition debug rendering
+	- Usage: `debug_saveconditions true`, `debug_saveconditions false`
+- `debug_dialogconditions`
+	- Type: `bool`
+	- Enables/disables dialog condition debug rendering
+	- Usage: `debug_dialogconditions true`, `debug_dialogconditions false`
+### Console Commands:
+- `refill`
+	- Arguments: `N/A`
+	- Refills the player's oxygen, fuel, health, and boost`
+- `toggle_launchcodes`
+	- Arguments: `N/A`
+	- Toggles whether the player has learnt the launch codes or not
+- `toggle_eyecoords`
+	- Arguments: `N/A`
+	- Toggles whether the player has learnt the eye's coordinates or not
+- `toggle_override_frequencies`
+	- Arguments: `N/A`
+	- Toggles the override for the player's knowledge of all frequencies
+- `toggle_override_facts`
+	- Arguments: `N/A`
+	- Toggles the override for the player's knowledge of all facts
+- `warp`
+	- Arguments: `location: string`
+		- `sun`
+		- `sunstation`
+		- `embertwin`
+		- `ashtwin`
+		- `atp` AKA `ashtwinproject`
+		- `timberhearth`
+		- `timberhearthprobe`
+		- `attlerock`
+		- `brittlehollow`
+		- `hollowlantern` AKA `hollowslantern`
+		- `giantsdeep`
+		- `probecannon`
+		- `probecannonmodule`
+		- `darkbramble`
+		- `vessel`
+		- `ship`
+		- `probe` AKA `scout`
+		- `nomaiprobe`
+		- `interloper`
+		- `whitehole`
+		- `whiteholestation`
+		- `stranger`
+		- `dreamworld`
+		- `quantummoon`
+	- Toggles the override for the player's knowledge of all frequencies
+	- Usage: e.g. `warp whiteholestation`
+- `recall_ship`
+	- Arguments: `N/A`
+	- Teleports the ship to the player
+- `toggle_helmet`
+	- Arguments: `N/A`
+	- Toggles the player's helmet
+- `toggle_player_gravity`
+	- Arguments: `N/A`
+	- Toggles whether the player is affected by gravity or not
+- `toggle_ship_gravity`
+	- Arguments: `N/A`
+	- Toggles whether the ship is affected by gravity or not
+- `toggle_player_collision`
+	- Arguments: `N/A`
+	- Toggles the player's collisions
+- `toggle_ship_collision`
+	- Arguments: `N/A`
+	- Toggles the ship's collisions
+- `toggle_player_fluid_collision`
+	- Arguments: `N/A`
+	- Toggles the player's collision with fluid
+- `toggle_ship_fluid_collision`
+	- Arguments: `N/A`
+	- Toggles the ship's collision with fluid
+- `toggle_training_suit`
+	- Arguments: `N/A`
+	- Toggles the training suit
+- `toggle_suit`
+	- Arguments: `N/A`
+	- Toggles the spacesuit
+- `toggle_loop_pause`
+	- Arguments: `N/A`
+	- Freezes/unfreezes the time loop.
+- `quantum_moon_collapse`
+	- Arguments: `N/A`
+	- Collapses the quantum moon
+- `give`
+	- Arguments: `item: string`
+		- `warpcore` AKA `warpcorevessel`
+		- `warpcorebroken`
+		- `warpcoreblack`
+		- `warpcorewhite`
+		- `warpcorenone`
+		- `lantern` AKA `lanternbasic`
+		- `lanternbroken`
+		- `artifactgen1`
+		- `artifactgen2`
+		- `artifact` AKA `artifactgen3`
+		- `slide_story1`
+		- `slide_story2`
+		- `slide_story3`
+		- `slide_story4`
+		- `slide_story5`
+		- `slide_path1`
+		- `slide_path2`
+		- `slide_path3`
+		- `slide_seal1`
+		- `slide_seal2`
+		- `slide_seal3`
+		- `slide_rule1`
+		- `slide_rule2`
+		- `slide_rule3`
+		- `slide_rule4`
+		- `slide_burning`
+		- `slide_experiment`
+		- `slide_damagereport`
+		- `slide_lanternsecret`
+		- `slide_prisoner`
+		- `slide_prisonerfarewell`
+		- `slide_tower`
+		- `slide_signaljammer`
+		- `slide_homeworld`
+		- `slide_supernovaescape`
+	- Gives the player an item
+	- Usage: e.g. `give lantern`
