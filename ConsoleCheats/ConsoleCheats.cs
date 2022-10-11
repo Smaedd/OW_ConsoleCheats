@@ -10,6 +10,8 @@ namespace ConsoleCheats
     [ConsoleContainer]
     internal static class CheatRunner
     {
+        public static void Log(string message, ConsoleLogType type = ConsoleLogType.Message) => ConsoleCheats.DevConsole.Log(message, type);
+
         [Console("refill")]
         public static void Refill()
         {
@@ -19,7 +21,7 @@ namespace ConsoleCheats
             Player.boostSeconds = Player.maxBoostSeconds;
             Ship.repair();
 
-            ConsoleCheats.DevConsole.Log("Refilling resources...");
+            Log("Refilling resources...");
         }
 
         [Console("toggle_launchcodes")]
@@ -28,7 +30,7 @@ namespace ConsoleCheats
             Data.launchCodes = !Data.launchCodes;
 
             string learntStr = Data.launchCodes ? "learnt" : "unlearnt";
-            ConsoleCheats.DevConsole.Log($"Launch codes {learntStr}.");
+            Log($"Launch codes {learntStr}.");
         }
 
         [Console("toggle_eyecoords")]
@@ -37,7 +39,7 @@ namespace ConsoleCheats
             Data.eyeCoordinates = !Data.eyeCoordinates;
 
             string learntStr = Data.eyeCoordinates ? "learnt" : "unlearnt";
-            ConsoleCheats.DevConsole.Log($"Eye coordinates {learntStr}.");
+            Log($"Eye coordinates {learntStr}.");
         }
 
         [Console("toggle_override_frequencies")]
@@ -60,8 +62,8 @@ namespace ConsoleCheats
             string freqStr = Data.knowAllFrequencies ? "enabled" : "disabled";
             string signStr = Data.knowAllSignals ? "enabled" : "disabled";
 
-            ConsoleCheats.DevConsole.Log($"All frequencies override {freqStr}.");
-            ConsoleCheats.DevConsole.Log($"All signals override {signStr}.");
+            Log($"All frequencies override {freqStr}.");
+            Log($"All signals override {signStr}.");
         }
 
         [Console("toggle_override_facts")]
@@ -84,8 +86,8 @@ namespace ConsoleCheats
             string rumoStr = Data.knowAllRumors ? "enabled" : "disabled";
             string factStr = Data.knowAllFacts ? "enabled" : "disabled";
 
-            ConsoleCheats.DevConsole.Log($"All rumors override {rumoStr}.");
-            ConsoleCheats.DevConsole.Log($"All facts override {factStr}.");
+            Log($"All rumors override {rumoStr}.");
+            Log($"All facts override {factStr}.");
         }
 
         [Console("warp")]
@@ -169,11 +171,11 @@ namespace ConsoleCheats
                     Teleportation.teleportPlayerToQuantumMoon();
                     break;
                 default:
-                    ConsoleCheats.DevConsole.Log("Invalid location!");
+                    Log("Invalid location!", ConsoleLogType.Warning);
                     return;
             };
 
-            ConsoleCheats.DevConsole.Log($"Warped to {location}.");
+            Log($"Warped to {location}.");
         }
 
         [Console("recall_ship")]
@@ -181,7 +183,7 @@ namespace ConsoleCheats
         {
             Teleportation.teleportShipToPlayer();
 
-            ConsoleCheats.DevConsole.Log("Teleported the ship to your location.");
+            Log("Teleported the ship to your location.");
         }
 
         [Console("toggle_helmet")]
@@ -190,7 +192,7 @@ namespace ConsoleCheats
             Player.helmet = !Player.helmet;
 
             string enableStr = Player.helmet ? "enabled" : "disabled";
-            ConsoleCheats.DevConsole.Log($"Player helmet {enableStr}.");
+            Log($"Player helmet {enableStr}.");
         }
 
         [Console("toggle_player_gravity")]
@@ -199,7 +201,7 @@ namespace ConsoleCheats
             Player.gravity = !Player.gravity;
 
             string enableStr = Player.gravity ? "enabled" : "disabled";
-            ConsoleCheats.DevConsole.Log($"Player gravity {enableStr}.");
+            Log($"Player gravity {enableStr}.");
         }
 
         [Console("toggle_ship_gravity")]
@@ -208,7 +210,7 @@ namespace ConsoleCheats
             Ship.gravity = !Ship.gravity;
 
             string enableStr = Ship.gravity ? "enabled" : "disabled";
-            ConsoleCheats.DevConsole.Log($"Ship gravity {enableStr}.");
+            Log($"Ship gravity {enableStr}.");
         }
 
         [Console("toggle_player_collision")]
@@ -217,7 +219,7 @@ namespace ConsoleCheats
             Player.collision = !Player.collision;
 
             string enableStr = Player.collision ? "enabled" : "disabled";
-            ConsoleCheats.DevConsole.Log($"Player collision {enableStr}.");
+            Log($"Player collision {enableStr}.");
         }
 
         [Console("toggle_ship_collision")]
@@ -226,7 +228,7 @@ namespace ConsoleCheats
             Ship.collision = !Ship.collision;
 
             string enableStr = Ship.collision ? "enabled" : "disabled";
-            ConsoleCheats.DevConsole.Log($"Ship collision {enableStr}.");
+            Log($"Ship collision {enableStr}.");
         }
 
         [Console("toggle_player_fluid_collision")]
@@ -235,7 +237,7 @@ namespace ConsoleCheats
             Player.fluidCollision = !Player.fluidCollision;
 
             string enableStr = Player.fluidCollision ? "enabled" : "disabled";
-            ConsoleCheats.DevConsole.Log($"Player fluid collision {enableStr}.");
+            Log($"Player fluid collision {enableStr}.");
         }
 
         [Console("toggle_ship_fluid_collision")]
@@ -244,7 +246,7 @@ namespace ConsoleCheats
             Ship.fluidCollision = !Ship.fluidCollision;
 
             string enableStr = Ship.fluidCollision ? "enabled" : "disabled";
-            ConsoleCheats.DevConsole.Log($"Ship fluid collision {enableStr}.");
+            Log($"Ship fluid collision {enableStr}.");
         }
 
         [Console("toggle_training_suit")]
@@ -253,7 +255,7 @@ namespace ConsoleCheats
             Player.trainingSuit = !Player.trainingSuit;
 
             string enableStr = Player.trainingSuit ? "enabled" : "disabled";
-            ConsoleCheats.DevConsole.Log($"Training suit {enableStr}.");
+            Log($"Training suit {enableStr}.");
         }
 
         [Console("toggle_suit")]
@@ -262,7 +264,7 @@ namespace ConsoleCheats
             Player.spaceSuit = !Player.spaceSuit;
 
             string enableStr = Player.spaceSuit ? "enabled" : "disabled";
-            ConsoleCheats.DevConsole.Log($"Spacesuit {enableStr}.");
+            Log($"Spacesuit {enableStr}.");
         }
 
         [Console("god")]
@@ -327,7 +329,7 @@ namespace ConsoleCheats
             SuperNova.freeze = !SuperNova.freeze;
 
             string enableStr = SuperNova.freeze ? "paused" : "unpaused";
-            ConsoleCheats.DevConsole.Log($"Time loop {enableStr}.");
+            Log($"Time loop {enableStr}.");
         }
 
         [Console("loop_time")]
@@ -471,11 +473,11 @@ namespace ConsoleCheats
                     Possession.pickUpSlideReel(Items.SlideReelStory.SupernovaEscape, false);
                     break;
                 default:
-                    ConsoleCheats.DevConsole.Log($"Invalid item!");
+                    Log($"Invalid item!", ConsoleLogType.Error);
                     return;
             }
 
-            ConsoleCheats.DevConsole.Log($"Gave {item} to player.");
+            Log($"Gave {item} to player.");
         }
 
         [Console("fog")]
