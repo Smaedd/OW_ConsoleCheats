@@ -3,10 +3,13 @@ This mod is a [Developer Console](https://github.com/Smaedd/OW_DeveloperConsole)
 
 To run a cheat, open the console with the `~` key and submit the desired command.
 
+Almost all of the functionality in this mod is essentially copied from PacificEngine's [Common Resources]{https://github.com/PacificEngine/OW_CommonResources} mod. This is to strip out redundant code and allow the cheats to run standalone.
+Currently, the debug commands available in the original mod are not implemented.
+
 ###  Console Variables:
 - `god`
 	- Type: `bool`
-	- Stores whether the player is invincible
+	- Stores whether the player is invincible or not (also gives infinite health, fuel and oxygen)
 	- Usage: `god true`, `god false`
 - `infinite_fuel`
 	- Type: `bool`
@@ -24,6 +27,24 @@ To run a cheat, open the console with the `~` key and submit the desired command
 	- Type: `bool`
 	- Stores whether the player has infinite boost or not
 	- Usage: `infinite_boost true`, `infinite_boost false`
+- `player_gravity`
+	- Type: `bool`
+	- Stores whether the player is affected by gravity or not
+- `ship_gravity`
+	- Arguments: `N/A`
+	- Stores whether the ship is affected by gravity or not
+- `player_collision`
+	- Arguments: `N/A`
+	- Stores whether the player has collisions or not
+- `ship_collision`
+	- Arguments: `N/A`
+	- Stores whether the ship has collisions or not
+- `player_fluid_collision`
+	- Arguments: `N/A`
+	- Stores whether the player has collisions with fluid or not
+- `ship_fluid_collision`
+	- Arguments: `N/A`
+	- Stores whether the ship has collisions with fluid or not
 - `anglerfish_ai`
 	- Type: `bool`
 	- Stores whether the anglerfish AI is enabled or not
@@ -36,6 +57,10 @@ To run a cheat, open the console with the `~` key and submit the desired command
 	- Type: `bool`
 	- Stores whether the 'inhabitants' (EOTE) AI are hostile or not 
 	- Usage: `inhabitants_hostile true`, `inhabitants_hostile false`
+- `pause_loop`
+	- Type: `bool`
+	- Stores whether the loop is paused or not
+	- Usage: `loop_time true`, `loop_time false`
 - `loop_time`
 	- Type: `float`
 	- Stores the remaining loop time (in seconds)
@@ -52,34 +77,6 @@ To run a cheat, open the console with the `~` key and submit the desired command
 	- Type: `bool`
 	- Stores whether fog is being rendered or not
 	- Usage: `fog true`, `fog false`
-- `debug_playerpos`
-	- Type: `bool`
-	- Enables/disables player position debug rendering
-	- Usage: `debug_playerpos true`, `debug_playerpos false`
-- `debug_planetpos`
-	- Type: `bool`
-	- Enables/disables planet position debug rendering
-	- Usage: `debug_planetpos true`, `debug_planetpos false`
-- `debug_bramble`
-	- Type: `bool`
-	- Enables/disables dark bramble portal debug rendering
-	- Usage: `debug_bramble true`, `debug_bramble false`
-- `debug_warppad`
-	- Type: `bool`
-	- Enables/disables warp pad debug rendering
-	- Usage: `debug_warppad true`, `debug_warppad false`
-- `debug_facts`
-	- Type: `bool`
-	- Enables/disables fact debug rendering
-	- Usage: `debug_facts true`, `debug_facts false`
-- `debug_saveconditions`
-	- Type: `bool`
-	- Enables/disables save condition debug rendering
-	- Usage: `debug_saveconditions true`, `debug_saveconditions false`
-- `debug_dialogconditions`
-	- Type: `bool`
-	- Enables/disables dialog condition debug rendering
-	- Usage: `debug_dialogconditions true`, `debug_dialogconditions false`
 ### Console Commands:
 - `refill`
 	- Arguments: `N/A`
@@ -90,12 +87,15 @@ To run a cheat, open the console with the `~` key and submit the desired command
 - `toggle_eyecoords`
 	- Arguments: `N/A`
 	- Toggles whether the player has learnt the eye's coordinates or not
-- `toggle_override_frequencies`
+- `toggle_allfrequencies`
 	- Arguments: `N/A`
-	- Toggles the override for the player's knowledge of all frequencies
-- `toggle_override_facts`
+	- Toggles the the player's knowledge of all frequencies
+- `toggle_allsignals`
 	- Arguments: `N/A`
-	- Toggles the override for the player's knowledge of all facts
+	- Toggles the the player's knowledge of all signals
+- `toggle_allfacts`
+	- Arguments: `N/A`
+	- Toggles the the player's knowledge of all facts
 - `warp`
 	- Arguments: `location: string`
 		- `sun`
@@ -130,33 +130,12 @@ To run a cheat, open the console with the `~` key and submit the desired command
 - `toggle_helmet`
 	- Arguments: `N/A`
 	- Toggles the player's helmet
-- `toggle_player_gravity`
-	- Arguments: `N/A`
-	- Toggles whether the player is affected by gravity or not
-- `toggle_ship_gravity`
-	- Arguments: `N/A`
-	- Toggles whether the ship is affected by gravity or not
-- `toggle_player_collision`
-	- Arguments: `N/A`
-	- Toggles the player's collisions
-- `toggle_ship_collision`
-	- Arguments: `N/A`
-	- Toggles the ship's collisions
-- `toggle_player_fluid_collision`
-	- Arguments: `N/A`
-	- Toggles the player's collision with fluid
-- `toggle_ship_fluid_collision`
-	- Arguments: `N/A`
-	- Toggles the ship's collision with fluid
 - `toggle_training_suit`
 	- Arguments: `N/A`
 	- Toggles the training suit
 - `toggle_suit`
 	- Arguments: `N/A`
 	- Toggles the spacesuit
-- `toggle_loop_pause`
-	- Arguments: `N/A`
-	- Freezes/unfreezes the time loop.
 - `quantum_moon_collapse`
 	- Arguments: `N/A`
 	- Collapses the quantum moon

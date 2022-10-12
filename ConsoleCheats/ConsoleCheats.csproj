@@ -28,11 +28,4 @@
   <ItemGroup>
     <Content Include="ConsoleCheats.csproj.user" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="PacificEngine.OW_CommonResources">
-      <HintPath>lib\PacificEngine.OW_CommonResources.dll</HintPath>
-	  <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-	  <Private>False</Private>
-    </Reference>
-  </ItemGroup>
 </Project>
