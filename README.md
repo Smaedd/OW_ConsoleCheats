@@ -3,7 +3,7 @@ This mod is a [Developer Console](https://github.com/Smaedd/OW_DeveloperConsole)
 
 To run a cheat, open the console with the `~` key and submit the desired command.
 
-Almost all of the functionality in this mod is essentially copied from PacificEngine's [Common Resources]{https://github.com/PacificEngine/OW_CommonResources} mod. This is to strip out redundant code and allow the cheats to run standalone.
+Almost all of the functionality in this mod is essentially copied from PacificEngine's [Common Resources](https://github.com/PacificEngine/OW_CommonResources) mod. This is to strip out redundant code and allow the cheats to run standalone.
 Currently, the debug commands available in the original mod are not implemented.
 
 ###  Console Variables:
