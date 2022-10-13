@@ -67,7 +67,7 @@ namespace ConsoleCheats
             _OriginalColors.Remove(__instance);
         }
 
-        [Console("fog")]
+        [ConsoleData("fog")]
         public static bool FogVar
         {
             get => _FogEnabled;

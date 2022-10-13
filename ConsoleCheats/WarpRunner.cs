@@ -10,7 +10,7 @@ namespace ConsoleCheats
     {
         public static void Log(string message, ConsoleLogType type = ConsoleLogType.Message) => ConsoleCheats.DevConsole.Log(message, type);
 
-        [Console("warp")]
+        [ConsoleData("warp")]
         public static void Warp(string location)
         {
             IEnumerable<Sector> GetSectors(Sector.Name name) => SectorManager.GetRegisteredSectors().Where(s => s.GetName().Equals(name));
@@ -219,7 +219,7 @@ namespace ConsoleCheats
             Log($"Warped to {location}.");
         }
 
-        [Console("recall_ship")]
+        [ConsoleData("recall_ship")]
         public static void RecallShip()
         {
             OWRigidbody shipBody = Locator.GetShipBody();

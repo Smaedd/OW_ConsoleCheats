@@ -49,7 +49,7 @@ namespace ConsoleCheats
 
         private static bool _AnglerFishAI = true;
 
-        [Console("anglerfish_ai")]
+        [ConsoleData("anglerfish_ai")]
         public static bool AnglerfishAI
         {
             get => _AnglerFishAI;
@@ -86,10 +86,10 @@ namespace ConsoleCheats
             return false;
         }
 
-        [Console("inhabitants_ai")]
+        [ConsoleData("inhabitants_ai")]
         public static bool InhabitantsAI = true;
 
-        [Console("inhabitants_hostile")]
+        [ConsoleData("inhabitants_hostile")]
         public static bool InhabitantsHostile = true;
 
         public static void Update()

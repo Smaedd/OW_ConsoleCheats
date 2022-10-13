@@ -400,7 +400,7 @@ namespace ConsoleCheats
             return newTexture;
         }
 
-        [Console("give")]
+        [ConsoleData("give")]
         public static void Give(string item)
         {
             OWItem pickupItem;
