@@ -5,6 +5,8 @@ using System.Reflection;
 using UnityEngine;
 using System.Linq;
 using HarmonyLib;
+using System.Security.Policy;
+using UnityEngine.SocialPlatforms.Impl;
 
 namespace ConsoleCheats
 {
@@ -22,7 +24,7 @@ namespace ConsoleCheats
         private const float MAX_HEALTH = 100f;
         private const float MAX_BOOST = 1f;
 
-        [ConsoleData("refill")]
+        [ConsoleData("refill", "Refills the player's oxygen, fuel, health and boost")]
         public static void Refill()
         {
             PResources._currentOxygen = MAX_OXYGEN;
@@ -48,7 +50,7 @@ namespace ConsoleCheats
             Log("Refilling resources...");
         }
 
-        [ConsoleData("toggle_launchcodes")]
+        [ConsoleData("toggle_launchcodes", "Toggles whether the player has learnt the launch codes or not")]
         public static void ToggleLaunchCodes()
         {
             bool newState = !(PlayerData.IsLoaded() && PlayerData.KnowsLaunchCodes());
@@ -69,7 +71,7 @@ namespace ConsoleCheats
             Log($"Launch codes {learntStr}.");
         }
 
-        [ConsoleData("toggle_eyecoords")]
+        [ConsoleData("toggle_eyecoords", "Toggles whether the player has learnt the eye's coordinates or not")]
         public static void ToggleEyeCoords()
         {
             const string factName = "OPC_EYE_COORDINATES_X1";
@@ -101,7 +103,7 @@ namespace ConsoleCheats
             Log($"Eye coordinates {learntStr}.");
         }
 
-        [ConsoleData("toggle_allfrequencies")]
+        [ConsoleData("toggle_allfrequencies", "Toggles the the player's knowledge of all frequencies")]
         public static void ToggleAllFrequencies()
         {
             if (!PlayerData.IsLoaded())
@@ -134,7 +136,7 @@ namespace ConsoleCheats
             Log($"All frequencies {freqStr}.");
         }
 
-        [ConsoleData("toggle_allsignals")]
+        [ConsoleData("toggle_allsignals", "Toggles the the player's knowledge of all signals")]
         public static void ToggleAllSignals()
         {
             if (!PlayerData.IsLoaded())
@@ -160,7 +162,7 @@ namespace ConsoleCheats
             Log($"All signals {signStr}.");
         }
 
-        [ConsoleData("toggle_allfacts")]
+        [ConsoleData("toggle_allfacts", "Toggles the the player's knowledge of all facts")]
         public static void ToggleAllFacts()
         {
             var shipLog = Locator.GetShipLogManager();
@@ -193,7 +195,7 @@ namespace ConsoleCheats
             Log($"All facts and rumors {learnStr}.");
         }
 
-        [ConsoleData("toggle_helmet")]
+        [ConsoleData("toggle_helmet", "Toggles the player's helmet")]
         public static void ToggleHelmet()
         {
             var suit = Locator.GetPlayerSuit();
@@ -217,21 +219,21 @@ namespace ConsoleCheats
             Log($"Player helmet {enableStr}.");
         }
 
-        [ConsoleData("player_gravity")]
+        [ConsoleData("player_gravity", "Stores whether the player is affected by gravity or not")]
         public static bool PlayerGravity
         {
             get => Locator.GetPlayerBody()?.GetComponentInChildren<ForceApplier>()?.GetApplyForces() ?? true;
             set => Locator.GetPlayerBody()?.GetComponentInChildren<ForceApplier>()?.SetApplyForces(value);
         }
 
-        [ConsoleData("ship_gravity")]
+        [ConsoleData("ship_gravity", "Stores whether the ship is affected by gravity or not")]
         public static bool ShipGravity
         {
             get => Locator.GetShipBody()?.GetComponentInChildren<ForceApplier>()?.GetApplyForces() ?? true;
             set => Locator.GetShipBody()?.GetComponentInChildren<ForceApplier>()?.SetApplyForces(value);
         }
 
-        [ConsoleData("player_collision")]
+        [ConsoleData("player_collision", "Stores whether the player has collisions or not")]
         public static bool PlayerCollision
         {
             get => Locator.GetPlayerBody()?.GetRequiredComponent<Rigidbody>()?.detectCollisions ?? true;
@@ -247,7 +249,7 @@ namespace ConsoleCheats
             }
         }
 
-        [ConsoleData("ship_collision")]
+        [ConsoleData("ship_collision", "Stores whether the ship has collisions or not")]
         public static bool ShipCollision
         {
             get => Locator.GetShipBody()?.GetRequiredComponent<Rigidbody>()?.detectCollisions ?? true;
@@ -270,21 +272,21 @@ namespace ConsoleCheats
             }
         }
 
-        [ConsoleData("player_fluid_collision")]
+        [ConsoleData("player_fluid_collision", "Stores whether the player has collisions with fluid or not")]
         public static bool PlayerFluidCollision
         {
             get => Locator.GetPlayerBody()?.GetComponentInChildren<ForceApplier>()?.GetApplyFluids() ?? true;
             set => Locator.GetPlayerBody()?.GetComponentInChildren<ForceApplier>()?.SetApplyFluids(value);
         }
 
-        [ConsoleData("ship_fluid_collision")]
+        [ConsoleData("ship_fluid_collision", "Stores whether the ship has collisions with fluid or not")]
         public static bool ShipFluidCollision
         {
             get => Locator.GetShipBody()?.GetComponentInChildren<ForceApplier>()?.GetApplyFluids() ?? true;
             set => Locator.GetPlayerBody()?.GetComponentInChildren<ForceApplier>()?.SetApplyFluids(value);
         }
 
-        [ConsoleData("toggle_training_suit")]
+        [ConsoleData("toggle_training_suit", "Toggles the training suit")]
         public static void ToggleTrainingSuit()
         {
             var suit = Locator.GetPlayerSuit();
@@ -316,7 +318,7 @@ namespace ConsoleCheats
             Log($"Training suit {enableStr}.");
         }
 
-        [ConsoleData("toggle_suit")]
+        [ConsoleData("toggle_suit", "Toggles the spacesuit")]
         public static void ToggleSuit()
         {
             var suit = Locator.GetPlayerSuit();
@@ -348,37 +350,37 @@ namespace ConsoleCheats
             Log($"Spacesuit {enableStr}.");
         }
 
-        [ConsoleData("god")]
+        [ConsoleData("god", "Stores whether the player is invincible or not (also gives infinite health, fuel and oxygen)")]
         public static bool GodMode = false;
 
-        [ConsoleData("infinite_fuel")]
+        [ConsoleData("infinite_fuel", "Stores whether the player has infinite fuel or not")]
         public static bool InfiniteFuel = false;
 
-        [ConsoleData("infinite_oxygen")]
+        [ConsoleData("infinite_oxygen", "Stores whether the player has infinite oxygen or not")]
         public static bool InfiniteOxygen = false;
 
-        [ConsoleData("infinite_health")]
+        [ConsoleData("infinite_health", "Stores whether the player has infinite health or not")]
         public static bool InfiniteHealth = false;
 
-        [ConsoleData("infinite_boost")]
+        [ConsoleData("infinite_boost", "Stores whether the player has infinite boost or not")]
         public static bool InfiniteBoost = false;
 
         public static float LoopFreezeTime = float.NaN;
-        [ConsoleData("pause_loop")]
+        [ConsoleData("pause_loop", "Stores whether the loop is paused or not")]
         public static bool PauseLoop
         {
             get => !float.IsNaN(LoopFreezeTime);
             set => LoopFreezeTime = value ? TimeLoop.GetSecondsRemaining() : float.NaN;
         }
 
-        [ConsoleData("loop_time")]
+        [ConsoleData("loop_time", "Stores the remaining loop time (in seconds)")]
         public static float LoopTime
         {
             get => TimeLoop.GetSecondsRemaining();
             set => TimeLoop.SetSecondsRemaining(value);
         }
 
-        [ConsoleData("player_thrust")]
+        [ConsoleData("player_thrust", "Stores the player's thrust multiplier")]
         public static float PlayerThrust
         {
             get => Jetpack?.GetMaxTranslationalThrust() ?? 6f;
@@ -392,7 +394,7 @@ namespace ConsoleCheats
             }
         }
 
-        [ConsoleData("ship_thrust")]
+        [ConsoleData("ship_thrust", "Stores the ship's thrust multiplier")]
         public static float ShipThrust
         {
             get => ShipThruster?.GetMaxTranslationalThrust() ?? 50f;
@@ -406,7 +408,7 @@ namespace ConsoleCheats
             }
         }
 
-        [ConsoleData("quantum_moon_collapse")]
+        [ConsoleData("quantum_moon_collapse", "Collapses the quantum moon")]
         public static void QuantumMoonCollapse()
         {
             Locator.GetAstroObject(AstroObject.Name.QuantumMoon).GetComponentInChildren<QuantumMoon>().Invoke("Collapse", 0);

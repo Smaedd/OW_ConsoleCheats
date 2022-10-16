@@ -15,10 +15,10 @@ Currently, the debug commands available in the original mod are not implemented.
 	- Type: `bool`
 	- Stores whether the player has infinite fuel or not
 	- Usage: `infinite_fuel true`, `infinite_fuel false`
-- `infinite_oxygen
+- `infinite_oxygen`
 	- Type: `bool`
 	- Stores whether the player has infinite oxygen or not
-	- Usage: `infinite_oxygen true`, ``infinite_oxygen false`
+	- Usage: `infinite_oxygen true`, `infinite_oxygen false`
 - `infinite_health`
 	- Type: `bool`
 	- Stores whether the player has infinite health or not
@@ -122,7 +122,7 @@ Currently, the debug commands available in the original mod are not implemented.
 		- `stranger`
 		- `dreamworld`
 		- `quantummoon`
-	- Toggles the override for the player's knowledge of all frequencies
+	- Warps the player to the given location
 	- Usage: e.g. `warp whiteholestation`
 - `recall_ship`
 	- Arguments: `N/A`
@@ -176,5 +176,5 @@ Currently, the debug commands available in the original mod are not implemented.
 		- `slide_signaljammer`
 		- `slide_homeworld`
 		- `slide_supernovaescape`
-	- Gives the player an item
+	- Gives the player the given item
 	- Usage: e.g. `give lantern`

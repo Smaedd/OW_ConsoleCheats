@@ -49,7 +49,7 @@ namespace ConsoleCheats
 
         private static bool _AnglerFishAI = true;
 
-        [ConsoleData("anglerfish_ai")]
+        [ConsoleData("anglerfish_ai", "Stores whether the anglerfish AI is enabled or not")]
         public static bool AnglerfishAI
         {
             get => _AnglerFishAI;
@@ -86,10 +86,10 @@ namespace ConsoleCheats
             return false;
         }
 
-        [ConsoleData("inhabitants_ai")]
+        [ConsoleData("inhabitants_ai", "Stores whether the 'inhabitants' (EOTE) AI is enabled or not")]
         public static bool InhabitantsAI = true;
 
-        [ConsoleData("inhabitants_hostile")]
+        [ConsoleData("inhabitants_hostile", "Stores whether the 'inhabitants' (EOTE) AI are hostile or not")]
         public static bool InhabitantsHostile = true;
 
         public static void Update()
